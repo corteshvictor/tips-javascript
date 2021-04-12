@@ -62,10 +62,10 @@ for (const [index, value] of ['a', 'b', 'c'].entries()) {
 ## Intercambiar variable
 Los valores de dos variables se pueden intercambiar en una expresión de desestructuración
 ```javascript
-let a = 12
-let b = 6
+let a = 12;
+let b = 6;
 [b, a] = [a, b]
-console.log(a, b)
+console.log(a, b) //output: 6, 12
 ```
 
 ## Ordenar arreglos
@@ -121,3 +121,28 @@ element.scrollIntoView({
 });
 ```
 **Nota:** En IE11 no funciona.
+
+## Agregando propiedades dinámicas a un objeto.
+```javascript
+const dynamic = 'model'
+const vehicle = {
+	type:'car',
+	[dynamic]:2021
+}
+console,log(vehicle) //output: { type: 'car', model: 2021 }
+```
+## Eliminar los duplicados de un array.
+Utilizando Set y spread operator
+```javascript
+const arr = [ 'Victor', 'Cortes', 'Victor', 'Hugo' ]
+const uniqueArr = [ ... new Set(arr) ]
+console.log(uniqueArr) //output: [ 'Victor', 'Cortes', 'Hugo' ]
+```
+
+## Filtrar los valores considerados falsos.
+```javascript
+const arr = [ 0,
+'Valores', false, null, 'Verdaderos', undefined, true, 3 ]
+const filtered = aff.filter(Boolean)
+console.log(filtered) //output: [ 'Valores', 'Verdaderos', true, 3 ]
+```
