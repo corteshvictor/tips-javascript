@@ -1,8 +1,8 @@
 # Tips en JavaScript
 
 ## **Índice**
- - [Formatear la salida de JSON.Stringify](#formatear-la-salida-de-json.stringify)
- - [Obtener el índice de una iteración en un bucle for...of](#obtener-el-índice-de-una-iteración-en-un-bucle-for...of)
+ - [Formatear la salida de JSON Stringify](#formatear-la-salida-de-json-stringify)
+ - [Obtener el índice de una iteración en un bucle for-of](#obtener-el-índice-de-una-iteración-en-un-bucle-for-of)
  - [Intercambiar variable](#intercambiar-variable)
  - [Ordenar arreglos](#ordenar-arreglos)
  - [Edita páginas web directamente en el navegador sin tocar los elementos HTML](#edita-páginas-web-directamente-en-el-navegador-sin-tocar-los-elementos-html)
@@ -13,7 +13,7 @@
  - [Eliminar los duplicados de un array](#eliminar-los-duplicados-de-un-array)
  - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
 
-## Formatear la salida de JSON.Stringify
+## Formatear la salida de JSON Stringify
 
 Uso clásico de JSON.stringify()
 ```javascript
@@ -53,7 +53,7 @@ JSON.stringify(object, null, 2)
 */
 ```
 
-## Obtener el índice de una iteración en un bucle for...of
+## Obtener el índice de una iteración en un bucle for-of
 
 Un bucle for...of, introducido en ES6, es una excelente manera de iterar sobre una matriz:
 
