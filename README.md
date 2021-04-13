@@ -16,7 +16,7 @@
 
 ## Formatear la salida de JSON Stringify
 
-Uso clásico de JSON.stringify()
+Uso clásico de `JSON.stringify()` y el uso para dar formato `JSON.stringify(object, null, 2)`
 ```javascript
 const object = {
 	firstName: "firstName",
