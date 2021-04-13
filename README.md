@@ -12,6 +12,7 @@
  - [Agregando propiedades dinámicas a un objeto](#agregando-propiedades-dinámicas-a-un-objeto)
  - [Eliminar los duplicados de un array](#eliminar-los-duplicados-de-un-array)
  - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
+ - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
 
 ## Formatear la salida de JSON Stringify
 
@@ -161,3 +162,32 @@ const arr = [ 0,
 const filtered = aff.filter(Boolean)
 console.log(filtered) //output: [ 'Valores', 'Verdaderos', true, 3 ]
 ```
+
+## Arguments en funciones tradicionales o normales
+Cuando utilizas una función tradicional o normal, estas tienen incluido un objeto arguments que es similar a un arreglo y digo similar porque tiene un índice numerado y la propiedad `length`, pero en verdad no es un arreglo porque no posee todos los métodos de manipulación de los arreglos.
+
+Esto puede ser muy útil, porque puedes llamar a la función pasándole más parámetros de los que formalmente declaraste o de pronto no declaraste, es decir, a simple vista la función no recibe parámetros o argumentos.
+
+Con Spread operator `(...)` podemos copiar el contenido del objeto arguments a una variable y esta nueva variable ya puede ser manipulada.
+
+```javascript
+function getArguments() {
+  console.log(arguments) //output mas abajo
+  const array = [...arguments]
+  console.log(array). //output: [ 'V', 'H', 'C' ]
+}
+
+getArguments('V','H','C')
+```
+Output: del `console.log(arguments)`
+```javascript
+{
+  '0': 'V',
+  '1': 'H',
+  '2': 'C',
+  length: 3,
+  callee: ƒ getArguments(),
+  __proto__: {...}
+}
+```
+**Nota:** Esta es una de las tantas principales diferencias entre una arrow functions y una función normal, las arrow functions no tienen arguments.
