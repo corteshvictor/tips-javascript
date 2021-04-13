@@ -30,15 +30,16 @@ const object = {
     }
 }
 
-JSON.stringify(object)
+// Uso clásico
+console.log(JSON.stringify(object))
+
 /* output
 '{"firstName":"firstName","lastName":"lastName","birthDate":"1986-01-01","homeAddress":{"state":"state","address":"Address 34 56 apt 501","city":"city","zipCode":"zipCode"}}'
 */
-```
-Pasando el número 2 se formateará la salida con 2 espacios de sangría.
 
-```javascript
-JSON.stringify(object, null, 2)
+// Pasando el número 2 como tercer parámetro o argumento permite formatear la salida con 2 espacios de sangría.
+console.log(JSON.stringify(object, null, 2))
+
 /* output
 '{
   "firstName": "firstName",
