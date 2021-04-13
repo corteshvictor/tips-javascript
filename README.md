@@ -1,4 +1,17 @@
-# TIPs o Trucos JavaScript
+# Tips en JavaScript
+
+## **Índice**
+ - [Formatear la salida de JSON.Stringify](#formatear-la-salida-de-json.stringify)
+ - [Obtener el índice de una iteración en un bucle for...of](#obtener-el-índice-de-una-iteración-en-un-bucle-for...of)
+ - [Intercambiar variable](#intercambiar-variable)
+ - [Ordenar arreglos](#ordenar-arreglos)
+ - [Edita páginas web directamente en el navegador sin tocar los elementos HTML](#edita-páginas-web-directamente-en-el-navegador-sin-tocar-los-elementos-html)
+ - [Copiando objetos desde las herramientas de desarrollo o developer tools](#copiando-objetos-desde-las-herramientas-de-desarrollo-o-developer-tools)
+ - [Utilizar las propiedades-métodos-eventos de un elemento HTML por medio de su id](#utilizar-las-propiedades-métodos-eventos-de-un-elemento-html-por-medio-de-su-id)
+ - [Desplácese hasta un elemento específico con una animación de desplazamiento suave](#desplácese-hasta-un-elemento-específico-con-una-animación-de-desplazamiento-suave)
+ - [Agregando propiedades dinámicas a un objeto](#agregando-propiedades-dinámicas-a-un-objeto)
+ - [Eliminar los duplicados de un array](#eliminar-los-duplicados-de-un-array)
+ - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
 
 ## Formatear la salida de JSON.Stringify
 
@@ -40,13 +53,14 @@ JSON.stringify(object, null, 2)
 */
 ```
 
-## Obtener el índice de una iteración en un bucle for..of
+## Obtener el índice de una iteración en un bucle for...of
 
 Un bucle for...of, introducido en ES6, es una excelente manera de iterar sobre una matriz:
 
 ```javascript
-for (const arr of ['a', 'b', 'c']) {
-  console.log(arr)
+const arr = [ 'a', 'b', 'c' ]
+for (const value of arr) {
+  console.log(value)
 }
 ```
 ¿Cómo se puede obtener el índice de una iteración?
@@ -54,7 +68,8 @@ for (const arr of ['a', 'b', 'c']) {
 El bucle no ofrece ninguna sintaxis para hacer esto, pero puede combinar la sintaxis de desestructuración introducida en ES6 con llamar al `entries()` método en el [Array.prototype.entries()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/entries):
 
 ```javascript
-for (const [index, value] of ['a', 'b', 'c'].entries()) {
+const arr = [ 'a', 'b', 'c' ]
+for (const [index, value] of arr.entries()) {
   console.log(index, value)
 }
 ```
@@ -101,7 +116,7 @@ numbers.sort((a, b) => a - b)
 - o puedes utilizar Store object as global variable y después el método `copy` de la siguiente forma:
 <img width="315" alt="imagen" src="https://user-images.githubusercontent.com/17968316/114424848-1f679a00-9b7e-11eb-99e9-fd66b3aa1db6.png">
 
-## Utilizar las propiedades, métodos y eventos de un elemento HTML por medio de su id.
+## Utilizar las propiedades-métodos-eventos de un elemento HTML por medio de su id
 
 Si tienes un elemento en el DOM con un id, este se almacena en window y puedes obtener este elemento con javascript o desde la consola como se muestra en la siguiente imagen.
 <img width="895" alt="imagen" src="https://user-images.githubusercontent.com/17968316/114426790-07911580-9b80-11eb-9e79-8fa683892ef4.png">
@@ -109,7 +124,7 @@ Si tienes un elemento en el DOM con un id, este se almacena en window y puedes o
 - `window.hi.getAttribute('for')` estas utilizando el método getAttribute para obtener el valor del atributo for del elemento `label`
 - `window.hi.textContent` estas obteniendo el valor de la propiedad textContent del elemento `label`
 
-## Desplácese hasta un elemento específico con una animación de desplazamiento suave.
+## Desplácese hasta un elemento específico con una animación de desplazamiento suave
 ¿Sabías que puedes desencadenar un desplazamiento en un elemento específico utilizando una sola llamada a una función en JavaScript?
 
 Incluso puedes añadir un comportamiento para conseguir una bonita animación de desplazamiento suave.
@@ -122,7 +137,7 @@ element.scrollIntoView({
 ```
 **Nota:** En IE11 no funciona.
 
-## Agregando propiedades dinámicas a un objeto.
+## Agregando propiedades dinámicas a un objeto
 ```javascript
 const dynamic = 'model'
 const vehicle = {
@@ -131,7 +146,7 @@ const vehicle = {
 }
 console,log(vehicle) //output: { type: 'car', model: 2021 }
 ```
-## Eliminar los duplicados de un array.
+## Eliminar los duplicados de un array
 Utilizando Set y spread operator
 ```javascript
 const arr = [ 'Victor', 'Cortes', 'Victor', 'Hugo' ]
@@ -139,7 +154,7 @@ const uniqueArr = [ ... new Set(arr) ]
 console.log(uniqueArr) //output: [ 'Victor', 'Cortes', 'Hugo' ]
 ```
 
-## Filtrar los valores considerados falsos.
+## Filtrar los valores considerados falsos
 ```javascript
 const arr = [ 0,
 'Valores', false, null, 'Verdaderos', undefined, true, 3 ]
