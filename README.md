@@ -109,7 +109,6 @@ numbers.sort((a, b) => a - b)
 
 ## Copiando objetos desde las herramientas de desarrollo o developer tools
 - Abres tu navegador
-- Buscas la pagina web a editar.
 - Ingresas a las herramientas de desarrollo (click derecho inspect o tecla F12)
 - Ingresas a la pestaña Consola o Console.
 - Supongamos que tenemos un `console.log(object)` en nuestro código y cuando vamos a la consola lo vemos.
