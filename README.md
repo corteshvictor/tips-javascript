@@ -17,7 +17,7 @@
 ## Formatear la salida de JSON Stringify
 
 Uso clásico de `JSON.stringify()` y el uso para dar formato `JSON.stringify(object, null, 2)`
-```javascript
+```js
 const object = {
 	firstName: "firstName",
 	lastName: "lastName",
@@ -59,7 +59,7 @@ console.log(JSON.stringify(object, null, 2))
 
 Un bucle for...of, introducido en ES6, es una excelente manera de iterar sobre una matriz:
 
-```javascript
+```js
 const arr = [ 'a', 'b', 'c' ]
 for (const value of arr) {
   console.log(value)
@@ -69,7 +69,7 @@ for (const value of arr) {
 
 El bucle no ofrece ninguna sintaxis para hacer esto, pero puede combinar la sintaxis de desestructuración introducida en ES6 con llamar al `entries()` método en el [Array.prototype.entries()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/entries):
 
-```javascript
+```js
 const arr = [ 'a', 'b', 'c' ]
 for (const [index, value] of arr.entries()) {
   console.log(index, value)
@@ -78,7 +78,7 @@ for (const [index, value] of arr.entries()) {
 
 ## Intercambiar variable
 Los valores de dos variables se pueden intercambiar en una expresión de desestructuración
-```javascript
+```js
 let a = 12;
 let b = 6;
 [b, a] = [a, b]
@@ -87,13 +87,13 @@ console.log(a, b) //output: 6, 12
 
 ## Ordenar arreglos
 Si intentas ordenar arreglos con el método `sort()` notaras que no da el resultado esperado.
-```javascript
+```js
 const numbers = [1, 4, 7, 2, 3, 896, 2334, 400, 100]
 numbers.sort()
 //output: [1, 100, 2, 2334, 3, 4, 400, 7, 896]
 ```
 Te muestro una pequeña forma de hacerlo y esperar el resultado de la forma correcta.
-```javascript
+```js
 const numbers = [1, 4, 7, 2, 3, 896, 2334, 400, 100]
 numbers.sort((a, b) => a - b)
 //output: [1, 2, 3, 4, 7, 100, 400, 896, 2334]
@@ -130,7 +130,7 @@ Si tienes un elemento en el DOM con un id, este se almacena en window y puedes o
 ¿Sabías que puedes desencadenar un desplazamiento en un elemento específico utilizando una sola llamada a una función en JavaScript?
 
 Incluso puedes añadir un comportamiento para conseguir una bonita animación de desplazamiento suave.
-```javascript
+```js
 const element = document.getElementById('elementId')
 
 element.scrollIntoView({
@@ -140,7 +140,7 @@ element.scrollIntoView({
 **Nota:** En IE11 no funciona.
 
 ## Agregando propiedades dinámicas a un objeto
-```javascript
+```js
 const dynamic = 'model'
 const vehicle = {
 	type:'car',
@@ -150,17 +150,16 @@ console,log(vehicle) //output: { type: 'car', model: 2021 }
 ```
 ## Eliminar los duplicados de un array
 Utilizando Set y spread operator
-```javascript
+```js
 const arr = [ 'Victor', 'Cortes', 'Victor', 'Hugo' ]
 const uniqueArr = [ ... new Set(arr) ]
 console.log(uniqueArr) //output: [ 'Victor', 'Cortes', 'Hugo' ]
 ```
 
 ## Filtrar los valores considerados falsos
-```javascript
-const arr = [ 0,
-'Valores', false, null, 'Verdaderos', undefined, true, 3 ]
-const filtered = aff.filter(Boolean)
+```js
+const arr = [ 0, 'Valores', false, null, 'Verdaderos', undefined, true, 3 ]
+const filtered = arr.filter(Boolean)
 console.log(filtered) //output: [ 'Valores', 'Verdaderos', true, 3 ]
 ```
 
@@ -171,7 +170,7 @@ Esto puede ser muy útil, porque puedes llamar a la función pasándole más par
 
 Con Spread operator `(...)` podemos copiar el contenido del objeto arguments a una variable y esta nueva variable ya puede ser manipulada.
 
-```javascript
+```js
 function getArguments() {
   console.log(arguments) //output mas abajo
   const array = [...arguments]
@@ -179,9 +178,8 @@ function getArguments() {
 }
 
 getArguments('V','H','C')
-```
-Output: del `console.log(arguments)`
-```javascript
+
+/* Output: del console.log(arguments)
 {
   '0': 'V',
   '1': 'H',
@@ -190,5 +188,6 @@ Output: del `console.log(arguments)`
   callee: ƒ getArguments(),
   __proto__: {...}
 }
+*/
 ```
 **Nota:** Esta es una de las tantas principales diferencias entre una arrow functions y una función normal, las arrow functions no tienen arguments.
