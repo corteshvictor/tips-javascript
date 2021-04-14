@@ -143,10 +143,11 @@ element.scrollIntoView({
 ```js
 const dynamic = 'model'
 const vehicle = {
-	type:'car',
-	[dynamic]:2021
+	type: 'car',
+	[dynamic]: 2021
 }
-console,log(vehicle) //output: { type: 'car', model: 2021 }
+
+console.log(vehicle) //output: { type: 'car', model: 2021 }
 ```
 ## Eliminar los duplicados de un array
 Utilizando Set y spread operator
