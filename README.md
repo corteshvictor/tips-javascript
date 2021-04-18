@@ -193,7 +193,7 @@ getArguments('V','H','C')
 ```
 **Nota:** Esta es una de las tantas principales diferencias entre una arrow functions y una función normal, las arrow functions no tienen arguments.
 
-## Actualizar el estado mediante la composición de funciones en React
+## Actualizar el estado mediante la composición de funciones en React
 Si utilizas composición de funciones, te pueden ser muy útiles para diferentes propósitos.
 En el siguiente ejemplo: se compone una función para crear diferentes funciones de [setter](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/set) para actualizar el estado.
 
