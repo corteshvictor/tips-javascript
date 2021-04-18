@@ -13,6 +13,7 @@
  - [Eliminar los duplicados de un array](#eliminar-los-duplicados-de-un-array)
  - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
  - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
+ - [Actualizar el estado mediante la composición de funciones en React](actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
 
 ## Formatear la salida de JSON Stringify
 
@@ -191,3 +192,49 @@ getArguments('V','H','C')
 */
 ```
 **Nota:** Esta es una de las tantas principales diferencias entre una arrow functions y una función normal, las arrow functions no tienen arguments.
+
+## Actualizar el estado mediante la composición de funciones en React
+Si utilizas composición de funciones, te pueden ser muy útiles para diferentes propósitos.
+En el siguiente ejemplo: se compone una función para crear diferentes funciones de [setter](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/set) para actualizar el estado.
+
+```js
+import { useState } from "react";
+
+export default function App() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  //Set State using function composition
+  const setState = (set) => (event) => set(event.target.value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(firstName, lastName);
+    setFirstName("");
+    setLastName("");
+  };
+
+  return (
+    <div className="App">
+      <h2>Enter user data</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="first-name">firstName:</label>
+        <input
+          id="last-name"
+          value={firstName}
+          onChange={setState(setFirstName)}
+        />
+
+        <label htmlFor="last-name">lastName:</label>
+        <input
+          id="last-name"
+          value={lastName}
+          onChange={setState(setLastName)}
+        />
+
+        <button disabled={!firstName || !lastName}>add</button>
+      </form>
+    </div>
+  );
+}
+```
