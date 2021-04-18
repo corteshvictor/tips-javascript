@@ -13,7 +13,7 @@
  - [Eliminar los duplicados de un array](#eliminar-los-duplicados-de-un-array)
  - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
  - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
- - [Actualizar el estado mediante la composición de funciones en React](actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
+ - [Actualizar el estado mediante la composición de funciones en React](#actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
 
 ## Formatear la salida de JSON Stringify
 
