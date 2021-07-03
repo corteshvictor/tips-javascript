@@ -282,7 +282,7 @@ function setWeather(weather) {
   }
 }
 ```
-Ya comienza a verse un poco mejor, pero se puede presentar un inconveniente, por ejemplo si nos olvidamos de colocar el `break` o `return` dependiendo el caso, seguirá ejecutando las lineas siguientes de código y esto puede ser un problema. Entonces dicho esto, es posible que sea mucho mejor utilizar objetos literales ya que se vería de la siguente forma:
+Ya comienza a verse un poco mejor, pero se puede presentar un inconveniente, por ejemplo si nos olvidamos de colocar el `break` o `return` dependiendo el caso, seguirá ejecutando las lineas siguientes de código y esto puede ser un problema. Entonces dicho esto, es posible que sea mucho mejor utilizar objetos literales ya que se vería de la siguiente forma:
 
 ```js
 function setWeather(weather) {
