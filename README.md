@@ -14,6 +14,7 @@
  - [Filtrar los valores considerados falsos](#filtrar-los-valores-considerados-falsos)
  - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
  - [Actualizar el estado mediante la composición de funciones en React](#actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
+ - [Utilizar objetos literales en lugar de if anidados o switch](#utilizar-objetos-literales-en-lugar-de-if-anidados-o-switch)
 
 ## Formatear la salida de JSON Stringify
 
@@ -236,5 +237,77 @@ export default function App() {
       </form>
     </div>
   );
+}
+```
+
+## Utilizar objetos literales en lugar de if anidados o switch
+En JavaScript estamos acostumbrados a utilizar objetos para casi todo, entonces cuando hay varias condiciones, pienso que los objetos literales son la forma más legible de estructurar el código.
+
+Imaginemos que tenemos una función que te devuelve una frase dependiendo del tiempo atmosférico. 
+**Nota**: Para nuestro ejemplo quiero utilizar mayúsculas (`.toUpperCase()`) para resaltar el clima, pero se puede utilizar minúsculas (`.toLowerCase()`).
+
+Si utilizamos la sentencia `if/else`, se vería algo como esto:
+
+```js
+function setWeather(climate) {
+  const weather = climate.toUpperCase();
+  if (weather === 'SUNNY') {
+    return 'It is nice and sunny outside today';
+  } else if (weather === 'RAINY') {
+    return `It's raining heavily`;
+  } else if (weather === 'SNOWING') {
+    return 'The snow is coming down, it is freezing!';
+  } else if (weather === 'OVERCAST') {
+    return `It isn't raining, but the sky is grey and gloomy`;
+  } else {
+    return 'Weather not found!';
+  }
+}
+```
+Definitivamente creo que no es algo muy legible, por ende, pensamos utilizar `switch` para mejorar:
+
+```js
+function setWeather(weather) {
+  switch (weather.toUpperCase()) {
+    case 'SUNNY':
+    return 'It is nice and sunny outside today';
+    case 'RAINY':
+    return `It's raining heavily`;
+    case 'SNOWING':
+    return 'The snow is coming down, it is freezing!';
+    case 'OVERCAST':
+    return `It isn't raining, but the sky is grey and gloomy`;
+    default:
+    return 'Weather not found!';
+  }
+}
+```
+Ya comienza a verse un poco mejor, pero se puede presentar un inconveniente, por ejemplo si nos olvidamos de colocar el `break` o `return` dependiendo el caso, seguirá ejecutando las lineas siguientes de código y esto puede ser un problema. Entonces dicho esto, es posible que sea mucho mejor utilizar objetos literales ya que se vería de la siguente forma:
+
+```js
+function setWeather(weather) {
+  const atmosphericWeather = {
+    SUNNY: 'It is nice and sunny outside today',
+    RAINY: `It's raining heavily`,
+    SNOWING: 'The snow is coming down, it is freezing!',
+    OVERCAST: `It isn't raining, but the sky is grey and gloomy`,
+    default: 'Wather not found!'
+  }
+ 
+  return atmosphericWeather[weather.toUpperCase()] || atmosphericWeather['default'];
+}
+```
+o puedes utilizar [nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) para asignar una respuesta predeterminada:
+
+```js
+function setWeather(weather) {
+  const atmosphericWeather = {
+    SUNNY: 'It is nice and sunny outside today',
+    RAINY: `It's raining heavily`,
+    SNOWING: 'The snow is coming down, it is freezing!',
+    OVERCAST: `It isn't raining, but the sky is grey and gloomy`
+  }
+  
+  return atmosphericWeather[weather.toUpperCase()] ?? 'Weather not found!';
 }
 ```
