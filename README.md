@@ -15,7 +15,7 @@
  - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
  - [Actualizar el estado mediante la composición de funciones en React](#actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
  - [Utilizar objetos literales en lugar de if anidados o switch](#utilizar-objetos-literales-en-lugar-de-if-anidados-o-switch)
- - [Truco Node.js para utilizar cualquier puerto](#truco-node.js-para-utilizar-cualquier-puerto)
+ - [Truco Node js para utilizar cualquier puerto](#truco-node-js-para-utilizar-cualquier-puerto)
 
 ## Formatear la salida de JSON Stringify
 
@@ -313,7 +313,7 @@ function setWeather(weather) {
 }
 ```
 
-## Truco Node.js para utilizar cualquier puerto
+## Truco Node js para utilizar cualquier puerto
 
 Cuando habilitas un servidor en Node.js, para entorno de desarrollo, puedes pasar el 0 como puerto, Node busca un puerto libre.
 
