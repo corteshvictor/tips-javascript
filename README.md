@@ -15,6 +15,7 @@
  - [Arguments en funciones tradicionales o normales](#arguments-en-funciones-tradicionales-o-normales)
  - [Actualizar el estado mediante la composición de funciones en React](#actualizar-el-estado-mediante-la-composición-de-funciones-en-react)
  - [Utilizar objetos literales en lugar de if anidados o switch](#utilizar-objetos-literales-en-lugar-de-if-anidados-o-switch)
+ - [Truco Node.js para utilizar cualquier puerto](#truco-node.js-para-utilizar-cualquier-puerto)
 
 ## Formatear la salida de JSON Stringify
 
@@ -321,7 +322,7 @@ const { PORT = 0 } = process.env
 
 server.listen(0, function () {
 	console.log('Este es un puerto libre de forma aleatoria: ', this.address().port);
-	console.log(`server running on http://localhost:${this.address().port}`)
+	console.log(`server running on: http://localhost:${this.address().port}`)
 }
 ```
 
