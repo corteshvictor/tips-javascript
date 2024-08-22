@@ -311,3 +311,17 @@ function setWeather(weather) {
   return atmosphericWeather[weather.toUpperCase()] ?? 'Weather not found!';
 }
 ```
+
+## Truco Node.js para utilizar cualquier puerto
+
+Cuando habilitas un servidor en Node.js, para entorno de desarrollo, puedes pasar el 0 como puerto, Node busca un puerto libre.
+
+```javascript
+const { PORT = 0 } = process.env
+
+server.listen(0, function () {
+	console.log('Este es un puerto libre de forma aleatoria: ', this.address().port);
+	console.log(`server running on http://localhost:${this.address().port}`)
+}
+```
+
